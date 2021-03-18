@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
+    username: root
+    password: 111111
+   
+    
+    
+    # application.yml 로 파일이름 수정 (yml은 json과 비슷한 방식)
+    # property 방식은 불편함!!
+    # 예전엔 web, server xml 등에서 설정했지 이젠 여기서 모든 spring 설정을 할 수 있음 
