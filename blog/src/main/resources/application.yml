@@ -1,12 +1,41 @@
+server:
+  port: 8000 #default 는 8080
+  servlet:
+    context-path: /blog #default 는 /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+ 
+# 아무 설정을 안한경우 기본경로 : src/main/resources/static  
 spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul #blog 는 스키마명 
     username: root
     password: 111111
-   
     
-    
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+      
     # application.yml 로 파일이름 수정 (yml은 json과 비슷한 방식)
     # property 방식은 불편함!!
     # 예전엔 web, server xml 등에서 설정했지 이젠 여기서 모든 spring 설정을 할 수 있음 
+    
