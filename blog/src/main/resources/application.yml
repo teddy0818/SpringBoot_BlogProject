@@ -1,7 +1,7 @@
 server:
-  port: 8000 #default 는 8080
+  port: 8000   #default 는 8080
   servlet:
-    context-path: /blog #default 는 /
+    context-path: /blog   #default 는 /
     encoding:
       charset: UTF-8
       enabled: true
@@ -23,13 +23,13 @@ spring:
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: create	#none, update, create 선택 가능 (최초에면 create하고 update로 바꿔놔야 기존의 데이터들이 안지워진)
       naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-      use-new-id-generator-mappings: false
-    show-sql: true
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl # Entity(테이블)을 만들때 변수명 그대로 테이블을 만들어준다 // 다른전략도 있다.
+      use-new-id-generator-mappings: false #jpa가 사용하는 기본 넘버링 전략을 따라가지 않는다 true면 따라간다 
+    show-sql: true # 콘솔창에 보여줌 
     properties:
-      hibernate.format_sql: true
+      hibernate.format_sql: true # 콘솔창에 예쁘게 보여
 
   jackson:
     serialization:

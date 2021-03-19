@@ -11,7 +11,7 @@ public class TempControllerTest {
 	public String tempHome() {
 		System.out.println("tempHome()");
 		// 파일 리턴 기본 경로 : src/main/resources/static 
-		// static 에선 정적인 파일만 읽을 수 있음  ex) html, img 만 가능 jsp는 불가 -> main에 webapp/WEB-INF/views 폴더 생성 후 jsp 파일 넣
+		// static 에선 정적인 파일만 읽을 수 있음  ex) html, img 만 가능 jsp는 불가 -> main에 webapp/WEB-INF/views 폴더 생성 후 jsp 파일 넣기  
 		// 리턴명 : /home.html
 		// 풀경로 : src/main/resources/static/home.html
 		return "/home.html";
